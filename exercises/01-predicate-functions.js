@@ -21,6 +21,21 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+function isVowel(string){
+    var vowel= "AEIOUaeiou";
+        for (var i = 0 ; i< vowel.length; i++){
+       
+            if (string === vowel.charAt(i)){
+            return true; 
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+console.log(isVowel("b"));
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +52,18 @@
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+function isEven(number){
+    if (number%2 === 0){
+        return true;
+    }
+    else {return false;
+}}
 
+function isOdd(number){
+    if (((number+1)%2)===0){
+        return true;
+    } else{ return false;}
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
@@ -52,3 +78,12 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+functin isCapitalCity(state,city){
+    var capitals=
+   {Texas: "Austin",
+   Alaska:"Juneau"
+   }
+   return city==capital[state];
+   
+   }

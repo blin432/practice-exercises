@@ -7,7 +7,9 @@
 //
 // Example:
 // reverse("skoob") --> "books"
-
+function reverse(string){
+    return string.split("").reverse().join("");
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,8 +19,18 @@
 //
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
-
-
+function findLongestWord(string){
+    string= string.split(' ');
+    var res = {word:string[0],lenth:string[0].length};
+    string.forEach(function(element){
+        if(element.length>res.length){
+            res.word=element;
+            res.length= element.length;
+        }
+    });
+    return res.word;
+}
+    
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
@@ -29,7 +41,16 @@
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
-
+function nicer(string){
+    string = string.split(" ");
+    var bad = ["heck", "darn", "dang", "crappy"];
+    var answer= string.filter(function(element){
+        if(bad.indexOf(element)==-1){
+            return element;
+        }
+    });
+    return answer.join(" ");
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
@@ -38,7 +59,17 @@
 //
 // Examples:
 // capitalizeAll('hello world') --> 'Hello World'
-// capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
+// capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunda
+
+function capitalizeAll(sentence){
+    var array= sentence.split(" ");
+    var newString= array.map(function(element){
+        return element[0].toUpperCase()+ element.slice(1);
+    });
+    return newString.join(" ");
+}
+
+
 
 
 
@@ -52,3 +83,17 @@
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split(string, deliminator){
+    var string=[];
+    while(string.indexOf(deliminater) != -1){
+        var position = string.indexOf(deliminator);
+        string.push(string.slice(0,position));
+        string= string.slice(position + deliminattor.length,string.length);
+
+    
+    }
+    strin.push(string);
+    return string;
+}
+
