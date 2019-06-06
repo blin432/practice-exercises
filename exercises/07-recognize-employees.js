@@ -15,3 +15,9 @@
 // > ['Great job, Susan!', 'Great job, Anthony!', 'Great job, Bill!']
 //
 // Hint: What is the best data structure for the employees of the month list?
+function recognizeEmployees(names,employeesOfTheMonth){
+    return names.map(function(name){
+        var newArr=emplyeesOfTheMonth.indexOf(name) !=-1;
+        return newArr ? `Outstanding job, ${name}!`: `Great job, ${name}!`;
+    });
+}

@@ -1,3 +1,4 @@
+
 // TIP: check out this reference for how to sort arrays:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
@@ -7,7 +8,9 @@
 // Examples:
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
-
+function alphaSort(array){
+    return array.sort();
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,7 +20,11 @@
 // Examples:
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
-
+function strLengthSort(array){
+    return array.sort(function(a,b){
+        return a.length - b.length;
+    });
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,3 +45,15 @@
 //   [4, 5]
 // ])
 // > [[2], [4, 5], [9, 1, 9]]
+function sumSort(array){
+    return array.sort(function(a,b){
+        var A=0, B=0;
+        a.forEach(function(element){
+            return A +=element;
+        });
+        b.forEach(function(element){
+            return B+= element;
+        });
+        return A-B;
+    });
+}
